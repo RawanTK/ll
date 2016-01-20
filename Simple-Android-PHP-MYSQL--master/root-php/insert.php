@@ -22,7 +22,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 			//if you have a different table write your table's name
 			
 			//This query is to check whether the username or email is already registered or not 
-			$sql = "SELECT * FROM retrofit_users WHERE username='$username' OR email='$email'";
+			$sql = "SELECT * FROM test WHERE username='$username' OR email='$email'";
 			
 			//If variable check has some value from mysqli fetch array 
 			//That means username or email already exist 
@@ -35,7 +35,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
 			}else{				
 				//If username is not already exist 
 				//Creating insert query 
-				$sql = "INSERT INTO retrofit_users (name,username,password,email) VALUES('$name','$username','$password','$email')";
+				$sql = "INSERT INTO test (name,username,password,email) VALUES('$name','$username','$password','$email')";
 				
 				//Trying to insert the values to db 
 				if(mysqli_query($con,$sql)){
